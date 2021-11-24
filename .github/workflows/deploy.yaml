@@ -42,7 +42,8 @@ jobs:
         run: |
           helm install \
             cert-manager-webhook-ovh ./src/cert-manager-webhook-ovh \
-             --set groupName='acme.${{ secrets.K8S_DOMAIN }}'
+            --namespace cert-manager \
+            --set groupName='acme.${{ secrets.K8S_DOMAIN }}'
           kubectl -n cert-manager wait --for=condition=Ready pods --all
 
       - name: Deploy Issuer Lets encrypt
