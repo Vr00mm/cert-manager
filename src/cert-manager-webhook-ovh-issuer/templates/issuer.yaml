@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
   name: letsencrypt
 spec:
@@ -20,4 +20,3 @@ spec:
               key: applicationSecret
               name: ovh-credentials
             consumerKey: {{ .Values.consumerKey | quote }}
-
