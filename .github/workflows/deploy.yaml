@@ -55,7 +55,7 @@ jobs:
             --set email='${{ secrets.CONTACT_EMAIL }}' \
             --set applicationKey='${{ secrets.OVH_APP_KEY }}' \
             --set applicationSecret='${{ secrets.OVH_APP_SECRET }}' \
-            --set consumerKey='${{ secrets.K8S_OVH_CONSUMER_KEY }}'
+            --set consumerKey='${{ secrets.OVH_CONSUMER_KEY }}'
 
       - name: Delete Kubeconfig
         run: rm /tmp/kubeconfig

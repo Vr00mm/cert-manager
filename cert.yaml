@@ -1,10 +1,10 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: test
+  name: cert-test
 spec:
   dnsNames:
   - "litmus.k8s.remi-ziolkowski.fr"
   issuerRef:
     name: letsencrypt
-  secretName: litmus-k8s-remi-ziolkowski-fr
+  secretName: "litmus-k8s-remi-ziolkowski-fr"
