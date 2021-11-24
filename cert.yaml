@@ -7,4 +7,5 @@ spec:
   - "litmus.k8s.remi-ziolkowski.fr"
   issuerRef:
     name: letsencrypt
+    kind: ClusterIssuer
   secretName: "litmus-k8s-remi-ziolkowski-fr"
