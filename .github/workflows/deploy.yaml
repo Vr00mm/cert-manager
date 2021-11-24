@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy Cert Manager Chart
         run: |
-          helm install \
+          helm upgrade --install \
             cert-manager jetstack/cert-manager \
             --namespace cert-manager \
             --create-namespace \
@@ -40,7 +40,7 @@ jobs:
 
       - name: Deploy Webhook Ovh
         run: |
-          helm install \
+          helm upgrade --install \
             cert-manager-webhook-ovh ./src/cert-manager-webhook-ovh \
             --namespace cert-manager \
             --set groupName='acme.${{ secrets.K8S_DOMAIN }}'
@@ -48,7 +48,7 @@ jobs:
 
       - name: Deploy Issuer Lets encrypt
         run: |
-          helm install \
+          helm upgrade --install \
             cert-manager-webhook-ovh-issuer ./src/cert-manager-webhook-ovh-issuer \
             --namespace cert-manager \
             --set groupName='acme.${{ secrets.K8S_DOMAIN }}' \
